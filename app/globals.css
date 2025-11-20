@@ -146,12 +146,12 @@
 }
 
 body {
-  /* Clean graphite with subtle radial light zones and a modern crimson accent */
+  /* Clean graphite with toned-down crimson glow */
   background:
-    radial-gradient(circle at 20% 10%, rgba(225, 0, 38, 0.08), transparent 35%),
-    radial-gradient(circle at 75% 18%, rgba(255, 255, 255, 0.06), transparent 45%),
-    radial-gradient(circle at 15% 80%, rgba(225, 0, 38, 0.06), transparent 40%),
-    linear-gradient(180deg, #0b0b0e 0%, #0f1014 45%, #0a0a0c 100%);
+    radial-gradient(circle at 20% 10%, rgba(225, 0, 38, 0.06), transparent 34%),
+    radial-gradient(circle at 75% 18%, rgba(255, 255, 255, 0.04), transparent 42%),
+    radial-gradient(circle at 15% 80%, rgba(225, 0, 38, 0.04), transparent 38%),
+    linear-gradient(180deg, #0c0d11 0%, #0f1014 45%, #09090c 100%);
   color: var(--color-foreground);
   font-feature-settings: "rlig" 1, "calt" 1, "ss01" 1;
   text-rendering: optimizeLegibility;
@@ -194,9 +194,9 @@ body::after {
   content: "";
   position: fixed;
   inset: 0;
-  background: radial-gradient(circle at 70% 60%, rgba(225, 0, 38, 0.16), transparent 40%);
-  filter: blur(120px);
-  opacity: 0.8;
+  background: radial-gradient(circle at 70% 60%, rgba(225, 0, 38, 0.12), transparent 38%);
+  filter: blur(140px);
+  opacity: 0.6;
   pointer-events: none;
   z-index: 1;
 }
@@ -225,20 +225,32 @@ body::after {
 
 /* Matte translucent panels with Siemens-grade engineered surfaces */
 .glass-card {
-  background: rgba(255, 255, 255, 0.03);
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.03), rgba(255, 255, 255, 0.015));
   backdrop-filter: blur(18px) saturate(110%);
-  border: 1px solid rgba(255, 255, 255, 0.07);
-  box-shadow: 0 28px 48px rgba(0, 0, 0, 0.28), 0 10px 24px rgba(0, 0, 0, 0.16), inset 0 1px 0 rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.24), 0 10px 30px rgba(0, 0, 0, 0.16), inset 0 1px 0 rgba(255, 255, 255, 0.05);
   position: relative;
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
+.glass-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160' viewBox='0 0 160 160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.7' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='160' height='160' filter='url(%23n)' opacity='0.06'/%3E%3C/svg%3E");
+  mix-blend-mode: soft-light;
+  opacity: 0.6;
+  pointer-events: none;
+  z-index: -1;
+}
+
 /* Subtle hover with soft red glow - restrained and precise */
 .glass-card:hover {
-  border-color: rgba(225, 0, 38, 0.32);
-  box-shadow: 0 36px 72px rgba(0, 0, 0, 0.3), 0 14px 28px rgba(0, 0, 0, 0.2), 0 0 28px rgba(225, 0, 38, 0.12),
-    inset 0 1px 0 rgba(255, 255, 255, 0.08);
-  transform: translateY(-2px);
+  border-color: rgba(225, 0, 38, 0.2);
+  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.22), 0 10px 24px rgba(0, 0, 0, 0.18), 0 0 18px rgba(225, 0, 38, 0.08),
+    inset 0 1px 0 rgba(255, 255, 255, 0.07);
+  transform: translateY(-1px) scale(1.005);
 }
 
 /* Soft neutral spotlight for depth without flashiness */
@@ -268,15 +280,15 @@ body::after {
   position: absolute;
   inset: -1px;
   border-radius: inherit;
-  background: linear-gradient(135deg, rgba(225, 0, 38, 0.4), rgba(113, 113, 122, 0.22), rgba(225, 0, 38, 0.24));
-  opacity: 0;
-  transition: opacity 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  background: linear-gradient(135deg, rgba(225, 0, 38, 0.32), rgba(113, 113, 122, 0.18), rgba(225, 0, 38, 0.18));
+  opacity: 0.5;
+  transition: opacity 0.25s cubic-bezier(0.4, 0, 0.2, 1);
   z-index: -1;
   pointer-events: none;
 }
 
 .gradient-border-hover:hover::after {
-  opacity: 1;
+  opacity: 0.8;
 }
 
 /* Linear-style CTA button with solid #E10026 and subtle ambient glow */
@@ -288,8 +300,8 @@ body::after {
   transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
   position: relative;
   box-shadow: 0 0 0 1px rgba(225, 0, 38, 0.2), 0 10px 30px rgba(0, 0, 0, 0.34), inset 0 1px 0 rgba(255, 255, 255, 0.14);
-  background: linear-gradient(120deg, #ff1f3f 0%, #e10026 45%, #b8001e 100%);
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: linear-gradient(125deg, #ff2a45 0%, #e10026 45%, #a6001d 100%);
+  border: 1px solid rgba(255, 255, 255, 0.06);
 }
 
 .btn-premium:hover {
