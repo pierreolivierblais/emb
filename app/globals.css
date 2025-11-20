@@ -146,11 +146,11 @@
 }
 
 body {
-  /* Graphite base with very restrained crimson; bias to charcoal neutrals */
+  /* Graphite base with minimal crimson; bias to charcoal neutrals */
   background:
-    radial-gradient(circle at 18% 12%, rgba(225, 0, 38, 0.03), transparent 34%),
-    radial-gradient(circle at 72% 22%, rgba(255, 255, 255, 0.03), transparent 40%),
-    radial-gradient(circle at 12% 78%, rgba(225, 0, 38, 0.025), transparent 36%),
+    radial-gradient(circle at 18% 12%, rgba(225, 0, 38, 0.015), transparent 34%),
+    radial-gradient(circle at 72% 22%, rgba(255, 255, 255, 0.025), transparent 40%),
+    radial-gradient(circle at 12% 78%, rgba(225, 0, 38, 0.012), transparent 36%),
     linear-gradient(180deg, #0b0c11 0%, #0d0f14 45%, #08090c 100%);
   color: var(--color-foreground);
   font-feature-settings: "rlig" 1, "calt" 1, "ss01" 1;
@@ -194,9 +194,9 @@ body::after {
   content: "";
   position: fixed;
   inset: 0;
-  background: radial-gradient(circle at 70% 60%, rgba(225, 0, 38, 0.08), transparent 36%);
+  background: radial-gradient(circle at 70% 60%, rgba(225, 0, 38, 0.05), transparent 36%);
   filter: blur(160px);
-  opacity: 0.4;
+  opacity: 0.28;
   pointer-events: none;
   z-index: 1;
 }
@@ -280,15 +280,15 @@ body::after {
   position: absolute;
   inset: -1px;
   border-radius: inherit;
-  background: linear-gradient(135deg, rgba(225, 0, 38, 0.18), rgba(113, 113, 122, 0.18));
-  opacity: 0.35;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.06), rgba(113, 113, 122, 0.12));
+  opacity: 0.28;
   transition: opacity 0.25s cubic-bezier(0.4, 0, 0.2, 1);
   z-index: -1;
   pointer-events: none;
 }
 
 .gradient-border-hover:hover::after {
-  opacity: 0.55;
+  opacity: 0.4;
 }
 
 /* Linear-style CTA button with solid #E10026 and subtle ambient glow */
@@ -316,9 +316,9 @@ body::after {
 /* Clean hero with subtle technical blueprint elements */
 .hero-bg {
   background:
-    radial-gradient(circle at 25% 18%, rgba(255, 255, 255, 0.04) 0%, transparent 50%),
-    radial-gradient(circle at 80% 70%, rgba(225, 0, 38, 0.12), transparent 50%),
-    linear-gradient(140deg, rgba(255, 255, 255, 0.02), rgba(225, 0, 38, 0.08), rgba(255, 255, 255, 0.01));
+    radial-gradient(circle at 25% 18%, rgba(255, 255, 255, 0.03) 0%, transparent 50%),
+    radial-gradient(circle at 80% 70%, rgba(225, 0, 38, 0.05), transparent 50%),
+    linear-gradient(140deg, rgba(255, 255, 255, 0.02), rgba(225, 0, 38, 0.04), rgba(255, 255, 255, 0.01));
   position: relative;
 }
 
