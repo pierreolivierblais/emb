@@ -1,0 +1,13 @@
+.next
+node_modules
+.npm
+dist
+.DS_Store
+/out
+/.turbo
+*.log
+npm-debug.log*
+pnpm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+package-lock.json
