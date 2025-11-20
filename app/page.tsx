@@ -1,4 +1,4 @@
-import { ArrowRight, CheckCircle2, Mail, Phone, Clock, Wrench, Package, Settings } from "lucide-react"
+import { ArrowRight, CheckCircle2, Mail, Phone, Wrench, Package, Settings } from "lucide-react"
 import { Button } from "@/components/ui/button"
 
 export default function Home() {
@@ -430,21 +430,6 @@ export default function Home() {
                   </div>
                 </div>
 
-                <div className="flex items-start gap-5">
-                  <div className="h-12 w-12 rounded-lg bg-primary/8 flex items-center justify-center flex-shrink-0">
-                    <Clock className="h-5 w-5 text-primary" strokeWidth={1.5} />
-                  </div>
-                  <div className="space-y-1">
-                    <h3
-                      className="font-semibold text-lg tracking-[-0.01em]"
-                      style={{ fontFamily: "var(--font-display)" }}
-                    >
-                      Heures d'ouverture
-                    </h3>
-                    <p className="text-muted-foreground text-[15px]">Lundi - Vendredi: 8h00 - 17h00</p>
-                    <p className="text-muted-foreground text-[15px]">Samedi - Dimanche: Fermé</p>
-                  </div>
-                </div>
               </div>
 
               <div className="pt-10 border-t border-border/40">
@@ -469,14 +454,6 @@ export default function Home() {
                   >
                     <svg className="h-5 w-5 text-primary" fill="currentColor" viewBox="0 0 24 24">
                       <path d="M9 8h-3v4h3v12h5v-12h3.642l.358-4h-4v-1.667c0-.955.192-1.333 1.115-1.333h2.885v-5h-3.808c-3.596 0-5.192 1.583-5.192 4.615v3.385z" />
-                    </svg>
-                  </a>
-                  <a
-                    href="#"
-                    className="h-11 w-11 rounded-lg bg-primary/8 hover:bg-primary/12 flex items-center justify-center transition-all"
-                  >
-                    <svg className="h-5 w-5 text-primary" fill="currentColor" viewBox="0 0 24 24">
-                      <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.689-.07-4.849 0-3.204.013-3.663.07-4.948.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0-2.163c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
                     </svg>
                   </a>
                 </div>
