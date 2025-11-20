@@ -125,6 +125,23 @@ export default function Home() {
         </div>
       </section>
 
+      <section className="py-16 px-6 lg:px-8 border-b border-border/40">
+        <div className="max-w-7xl mx-auto flex flex-col gap-10">
+          <p className="text-xs uppercase tracking-[0.2em] text-muted-foreground">Ils nous font confiance</p>
+          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-6">
+            {["Siemens", "Bosch", "Alstom", "Schneider", "Linde"].map((name) => (
+              <div
+                key={name}
+                className="logo-tile rounded-lg border border-border/50 bg-white/3 backdrop-blur-sm flex items-center justify-center px-6 py-4"
+                aria-label={name}
+              >
+                <span className="text-sm font-semibold tracking-wide text-white opacity-80">{name}</span>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       <section id="apropos" className="py-40 px-6 lg:px-8 bg-secondary/30 relative section-divider">
         <div className="max-w-7xl mx-auto">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
