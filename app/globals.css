@@ -146,12 +146,12 @@
 }
 
 body {
-  /* Clean graphite with toned-down crimson glow */
+  /* Graphite base with very restrained crimson; bias to charcoal neutrals */
   background:
-    radial-gradient(circle at 20% 10%, rgba(225, 0, 38, 0.06), transparent 34%),
-    radial-gradient(circle at 75% 18%, rgba(255, 255, 255, 0.04), transparent 42%),
-    radial-gradient(circle at 15% 80%, rgba(225, 0, 38, 0.04), transparent 38%),
-    linear-gradient(180deg, #0c0d11 0%, #0f1014 45%, #09090c 100%);
+    radial-gradient(circle at 18% 12%, rgba(225, 0, 38, 0.03), transparent 34%),
+    radial-gradient(circle at 72% 22%, rgba(255, 255, 255, 0.03), transparent 40%),
+    radial-gradient(circle at 12% 78%, rgba(225, 0, 38, 0.025), transparent 36%),
+    linear-gradient(180deg, #0b0c11 0%, #0d0f14 45%, #08090c 100%);
   color: var(--color-foreground);
   font-feature-settings: "rlig" 1, "calt" 1, "ss01" 1;
   text-rendering: optimizeLegibility;
@@ -194,9 +194,9 @@ body::after {
   content: "";
   position: fixed;
   inset: 0;
-  background: radial-gradient(circle at 70% 60%, rgba(225, 0, 38, 0.12), transparent 38%);
-  filter: blur(140px);
-  opacity: 0.6;
+  background: radial-gradient(circle at 70% 60%, rgba(225, 0, 38, 0.08), transparent 36%);
+  filter: blur(160px);
+  opacity: 0.4;
   pointer-events: none;
   z-index: 1;
 }
@@ -225,10 +225,10 @@ body::after {
 
 /* Matte translucent panels with Siemens-grade engineered surfaces */
 .glass-card {
-  background: rgba(17, 18, 22, 0.75);
+  background: rgba(14, 16, 20, 0.78);
   backdrop-filter: blur(18px) saturate(110%);
-  border: 1px solid rgba(255, 255, 255, 0.06);
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.24), 0 10px 30px rgba(0, 0, 0, 0.16), inset 0 1px 0 rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  box-shadow: 0 14px 32px rgba(0, 0, 0, 0.24), 0 8px 24px rgba(0, 0, 0, 0.14), inset 0 1px 0 rgba(255, 255, 255, 0.04);
   position: relative;
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
@@ -247,10 +247,10 @@ body::after {
 
 /* Subtle hover with soft red glow - restrained and precise */
 .glass-card:hover {
-  border-color: rgba(225, 0, 38, 0.2);
-  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.22), 0 10px 24px rgba(0, 0, 0, 0.18), 0 0 18px rgba(225, 0, 38, 0.08),
-    inset 0 1px 0 rgba(255, 255, 255, 0.07);
-  transform: translateY(-1px) scale(1.005);
+  border-color: rgba(225, 0, 38, 0.14);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.22), 0 8px 22px rgba(0, 0, 0, 0.16), 0 0 12px rgba(225, 0, 38, 0.06),
+    inset 0 1px 0 rgba(255, 255, 255, 0.06);
+  transform: translateY(-1px) scale(1.003);
 }
 
 /* Soft neutral spotlight for depth without flashiness */
@@ -280,15 +280,15 @@ body::after {
   position: absolute;
   inset: -1px;
   border-radius: inherit;
-  background: linear-gradient(135deg, rgba(225, 0, 38, 0.32), rgba(113, 113, 122, 0.18), rgba(225, 0, 38, 0.18));
-  opacity: 0.5;
+  background: linear-gradient(135deg, rgba(225, 0, 38, 0.18), rgba(113, 113, 122, 0.18));
+  opacity: 0.35;
   transition: opacity 0.25s cubic-bezier(0.4, 0, 0.2, 1);
   z-index: -1;
   pointer-events: none;
 }
 
 .gradient-border-hover:hover::after {
-  opacity: 0.8;
+  opacity: 0.55;
 }
 
 /* Linear-style CTA button with solid #E10026 and subtle ambient glow */
