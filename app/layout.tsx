@@ -1,9 +1,12 @@
 import type { Metadata } from "next";
-import { Inter, Sora } from 'next/font/google';
+import { Inter } from 'next/font/google';
 import "./globals.css";
 
-const inter = Inter({ subsets: ["latin"], variable: '--font-inter' });
-const sora = Sora({ subsets: ["latin"], weight: ['600', '700', '800'], variable: '--font-sora' });
+const inter = Inter({
+  subsets: ["latin"],
+  weight: ['300', '400', '500', '600'],
+  variable: '--font-inter',
+});
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://embconception.ca"),
@@ -28,7 +31,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="fr" className="scroll-smooth">
-      <body className={`${inter.variable} ${sora.variable} font-sans antialiased`}>{children}</body>
+      <body className={`${inter.variable} font-sans antialiased`}>{children}</body>
     </html>
   );
 }
