@@ -1,4 +1,4 @@
- "use client"
+"use client"
 
 import { useState } from "react"
 import { ArrowRight, CheckCircle2, Mail, MapPin, Phone, Wrench, Package, Settings, X } from "lucide-react"
@@ -383,7 +383,7 @@ export default function Home() {
                 <button
                   type="button"
                   onClick={() => setActiveProjectImage(project)}
-                  className="relative h-56 w-full overflow-hidden text-left"
+                  className="relative h-56 w-full overflow-hidden text-left cursor-pointer"
                 >
                   <div className="absolute inset-0 bg-gradient-to-t from-card/90 via-transparent to-transparent z-10 opacity-60 group-hover:opacity-30 transition-opacity" />
                   <img
@@ -396,9 +396,15 @@ export default function Home() {
                   <p className="text-xs font-semibold text-primary mb-2 tracking-[0.08em] uppercase">
                     {project.category}
                   </p>
-                  <h3 className="text-lg font-bold tracking-[-0.01em]" style={{ fontFamily: "var(--font-display)" }}>
-                    {project.title}
-                  </h3>
+                  <button
+                    type="button"
+                    onClick={() => setActiveProjectImage(project)}
+                    className="text-left cursor-pointer"
+                  >
+                    <h3 className="text-lg font-bold tracking-[-0.01em]" style={{ fontFamily: "var(--font-display)" }}>
+                      {project.title}
+                    </h3>
+                  </button>
                 </div>
               </div>
             ))}
