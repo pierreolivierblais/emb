@@ -27,7 +27,7 @@ const featuredProjects = [
   {
     title: "Main de préhension",
     category: "Manutention",
-    image: "/realisations/manutention - main de préhension.png",
+    image: "/realisations/main-de-prehension.png",
   },
   {
     title: "Conception de cartonneuse",
