@@ -118,14 +118,14 @@ export default function Home() {
           <div className="min-h-[560px] lg:min-h-[620px] flex items-center">
             <div className="space-y-8 max-w-3xl lg:max-w-2xl xl:max-w-3xl">
               <h1
-                className="text-[72px] lg:text-[80px] font-bold leading-[0.9] tracking-[-0.04em] text-balance"
+                className="max-w-[11ch] text-[clamp(3.9rem,15vw,5.25rem)] lg:max-w-none lg:text-[80px] font-bold leading-[0.9] tracking-[-0.05em] text-balance"
                 style={{ fontFamily: "var(--font-display)" }}
               >
                 <span className="text-clean">Conception mécanique de </span>
                 {/* Using simpler gradient class without grainy effect */}
                 <span className="text-gradient-red">précision</span>
               </h1>
-              <p className="max-w-xl text-[18px] leading-[1.6] text-foreground/72 lg:max-w-lg xl:max-w-xl">
+              <p className="max-w-[21ch] text-[17px] leading-[1.55] text-foreground/72 lg:max-w-lg lg:text-[18px] xl:max-w-xl">
                 Expert en transformation du métal à froid et systèmes de manutention. Solutions sur mesure pour vos
                 projets industriels les plus exigeants.
               </p>
