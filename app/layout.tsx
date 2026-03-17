@@ -6,9 +6,13 @@ const inter = Inter({ subsets: ["latin"], variable: '--font-inter' });
 const sora = Sora({ subsets: ["latin"], weight: ['600', '700', '800'], variable: '--font-sora' });
 
 export const metadata: Metadata = {
-  title: "MécaniqueConception | Conception mécanique de précision",
+  metadataBase: new URL("https://embconception.ca"),
+  title: "EMB Conception | Conception mécanique de précision",
   description: "Expert en transformation du métal à froid et systèmes de manutention. Conception 3D, outillages, matriçage, roll forming, convoyeurs et cartonneurs.",
-  keywords: ["Conception 3D", "Transformation métal à froid", "SolidWorks", "Poinçons et matrice", "Roll forming", "Convoyeurs", "Cartonneurs", "Matriçage"]
+  keywords: ["Conception 3D", "Transformation métal à froid", "SolidWorks", "Poinçons et matrice", "Roll forming", "Convoyeurs", "Cartonneurs", "Matriçage"],
+  alternates: {
+    canonical: "/",
+  },
 };
 
 export const viewport = {

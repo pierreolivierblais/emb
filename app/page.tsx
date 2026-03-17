@@ -1,7 +1,54 @@
-import { ArrowRight, CheckCircle2, Mail, Phone, Wrench, Package, Settings } from "lucide-react"
+ "use client"
+
+import { useState } from "react"
+import { ArrowRight, CheckCircle2, Mail, MapPin, Phone, Wrench, Package, Settings, X } from "lucide-react"
 import { Button } from "@/components/ui/button"
 
+const clientLogos = [
+  { name: "Acme", src: "/images/Acme.svg" },
+  { name: "MEDSNAP", src: "/images/MEDSNAP.svg" },
+  { name: "Solution3dl", src: "/images/Solution3dl.svg" },
+  { name: "Tole Domtec", src: "/images/Tole Domtec.svg" },
+  { name: "Canam", src: "/images/canam.svg" },
+  { name: "Mecanium", src: "/images/mecanium.svg" },
+]
+
+const featuredProjects = [
+  {
+    title: "Outillage de matriçage progressif",
+    category: "Transformation métal",
+    image: "/realisations/matricage - matrice progressive.png",
+  },
+  {
+    title: "Convoyeur automatisé",
+    category: "Manutention",
+    image: "/realisations/convoyeur automatise - manutention.jpg",
+  },
+  {
+    title: "Main de préhension",
+    category: "Manutention",
+    image: "/realisations/manutention - main de préhension.png",
+  },
+  {
+    title: "Conception de cartonneuse",
+    category: "Conception mécanique",
+    image: "/realisations/conception-cartonneuse.jpg",
+  },
+  {
+    title: "Raft plate de roll former",
+    category: "Roll forming",
+    image: "/realisations/roll forming- raft plate de roll former.png",
+  },
+  {
+    title: "Cage barrière de protection modulaire",
+    category: "Sécurité industrielle",
+    image: "/realisations/securite- cage barriere de protection modulaire.png",
+  },
+]
+
 export default function Home() {
+  const [activeProjectImage, setActiveProjectImage] = useState<(typeof featuredProjects)[number] | null>(null)
+
   return (
     <div className="min-h-screen bg-background text-foreground">
       {/* Removing SVG filter that caused grainy texture issues */}
@@ -10,7 +57,7 @@ export default function Home() {
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <div className="flex justify-between items-center h-16">
             <div className="flex items-center gap-2.5">
-              <img src="/logo.svg" alt="EMB Logo" className="h-8 w-auto" />
+              <img src="/logo.svg" alt="EMB Logo" className="h-9 w-auto" />
             </div>
             <div className="hidden md:flex items-center gap-8">
               <a
@@ -48,10 +95,28 @@ export default function Home() {
         </div>
       </nav>
 
-      <section id="accueil" className="pt-32 pb-32 px-6 lg:px-8 hero-bg relative overflow-hidden">
-        <div className="max-w-7xl mx-auto">
-          <div className="grid lg:grid-cols-2 gap-16 items-center">
-            <div className="space-y-8">
+      <section id="accueil" className="hero-bg relative overflow-hidden px-6 pb-20 pt-32 lg:px-8 lg:pb-24">
+        <div className="hero-visual absolute inset-y-0 right-0 left-[48%] hidden lg:block xl:left-[38%]">
+          <div className="hero-machine-wrap absolute top-[44px] bottom-8 right-[-10%] w-[58vw] min-w-[780px] max-w-[940px] xl:right-[0%] xl:w-[56vw] xl:min-w-[760px] xl:max-w-[980px]">
+            <img
+              src="/hero2.png"
+              alt="Équipement industriel"
+              className="hero-machine h-full w-full object-contain object-top image-hover"
+            />
+          </div>
+        </div>
+
+        <div className="absolute right-[-28%] top-[44px] z-0 h-[74vh] w-[118vw] pointer-events-none sm:right-[-14%] sm:top-[44px] sm:h-[62vh] sm:w-[88vw] lg:hidden">
+          <img
+            src="/hero2.png"
+            alt="Équipement industriel"
+            className="hero-machine-mobile h-full w-full object-contain object-top"
+          />
+        </div>
+
+        <div className="max-w-7xl mx-auto relative z-10">
+          <div className="min-h-[560px] lg:min-h-[620px] flex items-center">
+            <div className="space-y-8 max-w-3xl lg:max-w-2xl xl:max-w-3xl">
               <h1
                 className="text-[72px] lg:text-[80px] font-bold leading-[0.9] tracking-[-0.04em] text-balance"
                 style={{ fontFamily: "var(--font-display)" }}
@@ -60,7 +125,7 @@ export default function Home() {
                 {/* Using simpler gradient class without grainy effect */}
                 <span className="text-gradient-red">précision</span>
               </h1>
-              <p className="text-[18px] text-muted-foreground leading-[1.6] max-w-xl">
+              <p className="max-w-xl text-[18px] leading-[1.6] text-foreground/72 lg:max-w-lg xl:max-w-xl">
                 Expert en transformation du métal à froid et systèmes de manutention. Solutions sur mesure pour vos
                 projets industriels les plus exigeants.
               </p>
@@ -68,14 +133,6 @@ export default function Home() {
                 Démarrer un projet
                 <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" strokeWidth={2} />
               </Button>
-            </div>
-            <div className="relative h-[560px] rounded-lg overflow-hidden ambient-glow">
-              <div className="absolute inset-0 bg-gradient-to-br from-foreground/5 via-transparent to-transparent z-10 pointer-events-none" />
-              <img
-                src="/industrial-metal-stamping-machinery.jpg"
-                alt="Équipement industriel"
-                className="w-full h-full object-cover image-hover"
-              />
             </div>
           </div>
 
@@ -128,14 +185,14 @@ export default function Home() {
       <section className="py-16 px-6 lg:px-8 border-b border-border/40">
         <div className="max-w-7xl mx-auto flex flex-col gap-10">
           <p className="text-xs uppercase tracking-[0.2em] text-muted-foreground">Ils nous font confiance</p>
-          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-6">
-            {["Siemens", "Bosch", "Alstom", "Schneider", "Linde"].map((name) => (
+          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-6">
+            {clientLogos.map((logo) => (
               <div
-                key={name}
-                className="logo-tile rounded-lg border border-border/50 bg-white/3 backdrop-blur-sm flex items-center justify-center px-6 py-4"
-                aria-label={name}
+                key={logo.name}
+                className="logo-tile flex items-center justify-center px-6 py-4"
+                aria-label={logo.name}
               >
-                <span className="text-sm font-semibold tracking-wide text-white opacity-80">{name}</span>
+                <img src={logo.src} alt={logo.name} className="logo-mark h-10 w-full object-contain" />
               </div>
             ))}
           </div>
@@ -144,23 +201,15 @@ export default function Home() {
 
       <section id="apropos" className="py-40 px-6 lg:px-8 bg-secondary/30 relative section-divider">
         <div className="max-w-7xl mx-auto">
-          <div className="grid lg:grid-cols-2 gap-16 items-center">
-            <div className="relative h-[520px] rounded-lg overflow-hidden order-2 lg:order-1 ambient-glow">
-              <div className="absolute inset-0 bg-gradient-to-tr from-foreground/5 via-transparent to-transparent z-10 pointer-events-none" />
-              <img
-                src="/mechanical-engineering-workshop.jpg"
-                alt="Atelier de conception"
-                className="w-full h-full object-cover image-hover"
-              />
-            </div>
-            <div className="space-y-8 order-1 lg:order-2">
+          <div className="mx-auto max-w-4xl space-y-8 text-center">
+            <div className="space-y-8">
               <h2
                 className="text-6xl font-bold tracking-[-0.03em] title-accent"
                 style={{ fontFamily: "var(--font-display)" }}
               >
                 Notre histoire
               </h2>
-              <div className="space-y-6 text-muted-foreground leading-[1.6] text-[17px]">
+              <div className="space-y-6 text-[17px] leading-[1.6] text-muted-foreground">
                 <p>
                   Forte de plusieurs années d'expérience dans le domaine de la conception mécanique, notre entreprise
                   s'est forgée une réputation d'excellence dans les secteurs de la transformation du métal à froid et de
@@ -329,39 +378,20 @@ export default function Home() {
           </div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {[
-              {
-                title: "Système de convoyage automatisé",
-                category: "Manutention",
-                image: "/industrial-metal-stamping-machinery.jpg",
-              },
-              {
-                title: "Outillage de matriçage",
-                category: "Transformation métal",
-                image: "/mechanical-engineering-workshop.jpg",
-              },
-              {
-                title: "Ligne de cartonnage",
-                category: "Manutention",
-                image: "/industrial-metal-stamping-machinery.jpg",
-              },
-              {
-                title: "Roll forming personnalisé",
-                category: "Transformation métal",
-                image: "/mechanical-engineering-workshop.jpg",
-              },
-              { title: "Poinçons haute précision", category: "Outillage", image: "/industrial-metal-stamping-machinery.jpg" },
-              { title: "Convoyeur modulaire", category: "Manutention", image: "/mechanical-engineering-workshop.jpg" },
-            ].map((project, i) => (
+            {featuredProjects.map((project, i) => (
               <div key={i} className="glass-card rounded-lg overflow-hidden group cursor-pointer gradient-border-hover">
-                <div className="relative h-56 overflow-hidden">
+                <button
+                  type="button"
+                  onClick={() => setActiveProjectImage(project)}
+                  className="relative h-56 w-full overflow-hidden text-left"
+                >
                   <div className="absolute inset-0 bg-gradient-to-t from-card/90 via-transparent to-transparent z-10 opacity-60 group-hover:opacity-30 transition-opacity" />
                   <img
                     src={project.image}
                     alt={project.title}
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                    className="w-full h-full object-cover"
                   />
-                </div>
+                </button>
                 <div className="p-6">
                   <p className="text-xs font-semibold text-primary mb-2 tracking-[0.08em] uppercase">
                     {project.category}
@@ -374,30 +404,34 @@ export default function Home() {
             ))}
           </div>
 
-          <div className="mt-28 max-w-4xl mx-auto">
-            <div className="glass-card rounded-lg p-12">
-              <div className="flex items-start gap-6">
-                <svg className="h-10 w-10 text-accent flex-shrink-0 mt-1" fill="currentColor" viewBox="0 0 24 24">
-                  <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z" />
-                </svg>
-                <div className="space-y-6">
-                  <p className="text-xl leading-[1.6] text-foreground">
-                    Excellent travail sur notre système de convoyage. L'équipe a fait preuve d'un grand
-                    professionnalisme et d'une expertise technique remarquable. Le projet a été livré dans les délais et
-                    répond parfaitement à nos besoins.
-                  </p>
-                  <div>
-                    <p className="font-bold text-lg tracking-[-0.01em]" style={{ fontFamily: "var(--font-display)" }}>
-                      Jean-Marc Tremblay
-                    </p>
-                    <p className="text-muted-foreground text-[15px] mt-1">Directeur des opérations, Industries XYZ</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
         </div>
       </section>
+
+      {activeProjectImage ? (
+        <div
+          className="fixed inset-0 z-[100] flex items-center justify-center bg-black/78 p-6 backdrop-blur-sm"
+          onClick={() => setActiveProjectImage(null)}
+        >
+          <button
+            type="button"
+            aria-label="Fermer l'image"
+            onClick={() => setActiveProjectImage(null)}
+            className="absolute right-5 top-5 flex h-11 w-11 items-center justify-center rounded-full border border-white/10 bg-black/55 text-white transition hover:bg-black/75"
+          >
+            <X className="h-5 w-5" strokeWidth={1.8} />
+          </button>
+          <div
+            className="max-h-[88vh] max-w-[min(92vw,1400px)] overflow-hidden rounded-2xl border border-white/10 bg-black/30 shadow-2xl"
+            onClick={(event) => event.stopPropagation()}
+          >
+            <img
+              src={activeProjectImage.image}
+              alt={activeProjectImage.title}
+              className="max-h-[88vh] w-auto max-w-full object-contain"
+            />
+          </div>
+        </div>
+      ) : null}
 
       <section id="contact" className="py-40 px-6 lg:px-8">
         <div className="max-w-7xl mx-auto">
@@ -428,7 +462,7 @@ export default function Home() {
                     >
                       Téléphone
                     </h3>
-                    <p className="text-muted-foreground text-[16px]">(555) 123-4567</p>
+                    <p className="text-muted-foreground text-[16px]">(581) 724-0163</p>
                   </div>
                 </div>
 
@@ -443,7 +477,22 @@ export default function Home() {
                     >
                       Courriel
                     </h3>
-                    <p className="text-muted-foreground text-[16px]">info@mecaniqueconception.com</p>
+                    <p className="text-muted-foreground text-[16px]">info@embconception.ca</p>
+                  </div>
+                </div>
+
+                <div className="flex items-start gap-5">
+                  <div className="h-12 w-12 rounded-lg bg-primary/8 flex items-center justify-center flex-shrink-0">
+                    <MapPin className="h-5 w-5 text-primary" strokeWidth={1.5} />
+                  </div>
+                  <div className="space-y-1">
+                    <h3
+                      className="font-semibold text-lg tracking-[-0.01em]"
+                      style={{ fontFamily: "var(--font-display)" }}
+                    >
+                      Adresse
+                    </h3>
+                    <p className="text-muted-foreground text-[16px]">658 Des Rosiers, Thetford Mines, QC, G6G 5Y1</p>
                   </div>
                 </div>
 
@@ -458,19 +507,14 @@ export default function Home() {
                 </h3>
                 <div className="flex gap-3">
                   <a
-                    href="#"
+                    href="https://www.linkedin.com/company/emb-conception-inc/"
+                    target="_blank"
+                    rel="noreferrer"
+                    aria-label="LinkedIn"
                     className="h-11 w-11 rounded-lg bg-primary/8 hover:bg-primary/12 flex items-center justify-center transition-all"
                   >
                     <svg className="h-5 w-5 text-primary" fill="currentColor" viewBox="0 0 24 24">
                       <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" />
-                    </svg>
-                  </a>
-                  <a
-                    href="#"
-                    className="h-11 w-11 rounded-lg bg-primary/8 hover:bg-primary/12 flex items-center justify-center transition-all"
-                  >
-                    <svg className="h-5 w-5 text-primary" fill="currentColor" viewBox="0 0 24 24">
-                      <path d="M9 8h-3v4h3v12h5v-12h3.642l.358-4h-4v-1.667c0-.955.192-1.333 1.115-1.333h2.885v-5h-3.808c-3.596 0-5.192 1.583-5.192 4.615v3.385z" />
                     </svg>
                   </a>
                 </div>
@@ -541,7 +585,7 @@ export default function Home() {
             <div className="flex items-center gap-2.5">
               <img src="/logo.svg" alt="EMB Logo" className="h-6 w-auto" />
             </div>
-            <p className="text-[13px] text-muted-foreground">© 2025 MécaniqueConception. Tous droits réservés.</p>
+            <p className="text-[13px] text-muted-foreground">© 2026 EMB Conception. Tous droits réservés.</p>
             <div className="flex gap-8 text-[13px]">
               <a href="#" className="text-muted-foreground hover:text-foreground transition-colors font-medium">
                 Confidentialité
