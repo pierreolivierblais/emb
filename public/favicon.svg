@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="1106 0 1762 1762">
+  <!-- Dark background -->
+  <rect x="1106" y="0" width="1762" height="1762" rx="220" fill="#0a0a0a"/>
+  <!-- M shape (white) -->
+  <path d="M1511 1760.5V824.5L1987 1690.5L2459 824.5V1760.5H1511Z" fill="white"/>
+  <!-- Red triangle -->
+  <path d="M1987 909.5L1502 1.5H2468L1987 909.5Z" fill="#CE2130"/>
+</svg>

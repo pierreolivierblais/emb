@@ -10,6 +10,9 @@ const inter = Inter({
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://embconception.ca"),
+  icons: {
+    icon: "/favicon.svg",
+  },
   title: "EMB Conception | Conception mécanique de précision",
   description: "Expert en transformation du métal à froid et systèmes de manutention. Conception 3D, outillages, matriçage, roll forming, convoyeurs et cartonneurs.",
   keywords: ["Conception 3D", "Transformation métal à froid", "SolidWorks", "Poinçons et matrice", "Roll forming", "Convoyeurs", "Cartonneurs", "Matriçage"],

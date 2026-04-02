@@ -13,8 +13,6 @@ import {
   IconFileDescription,
   IconChecklist,
   IconSearch,
-  IconBuildingFactory,
-  IconChisel,
 } from "@tabler/icons-react"
 
 const clientLogos = [
@@ -33,7 +31,7 @@ const featuredProjects = [
     image: "/realisations/matricage - matrice progressive.png",
   },
   {
-    title: "Convoyeur automatisé",
+    title: "Convoyeurs automatisés et adaptés",
     category: "Manutention",
     image: "/realisations/convoyeur automatise - manutention.jpg",
   },
@@ -71,32 +69,22 @@ const serviceItems = [
   {
     icon: <IconDimensions size={20} stroke={1.5} className="text-primary" />,
     title: "Conception 3D",
-    desc: "Modélisation précise de vos projets avec SolidWorks et autres logiciels de CAO de pointe.",
+    desc: "Une première phase à l'aide d'outils d'analyse des besoins est réalisée pour orienter la conception de la solution. À partir des intrants fournis par le client, une modélisation de la solution ou de différentes solutions sont proposées. L'étape suivante comprend la discussion et la confirmation avec le client des solutions émises, afin de s'assurer de l'atteinte des résultats finaux.",
   },
   {
     icon: <IconFileDescription size={20} stroke={1.5} className="text-primary" />,
     title: "Mise en plan",
-    desc: "Documentation technique complète et plans de fabrication détaillés pour vos pièces.",
+    desc: "Une fois la modélisation réalisée, une revue des concepts est appliquée pour s'assurer que la solution répond toujours au besoin de départ. À cette étape, la réalisation des devis, des dessins de fabrication et de la documentation technique nécessaire sont faites pour pouvoir procéder à la fabrication du projet. Une revue des documents fait suite avant la prochaine étape.",
   },
   {
     icon: <IconChecklist size={20} stroke={1.5} className="text-primary" />,
     title: "Suivi de projet",
-    desc: "Gestion complète de votre projet de la conception initiale jusqu'à la livraison finale.",
+    desc: "Si le client le désire, un suivi de la fabrication du montage et de la mise en route peuvent faire partis du mandat afin de s'assurer de la conformité du respect des spécifications et de la qualité du produit final.",
   },
   {
     icon: <IconSearch size={20} stroke={1.5} className="text-primary" />,
     title: "Recherche de fournisseurs",
-    desc: "Identification et sélection des meilleurs partenaires manufacturiers pour votre projet.",
-  },
-  {
-    icon: <IconBuildingFactory size={20} stroke={1.5} className="text-primary" />,
-    title: "Agent manufacturier",
-    desc: "Liaison directe entre votre entreprise et les fabricants pour une production optimale.",
-  },
-  {
-    icon: <IconChisel size={20} stroke={1.5} className="text-primary" />,
-    title: "Poinçons et matrices",
-    desc: "Conception spécialisée d'outillages pour la transformation du métal à froid.",
+    desc: "EMB Conception Inc. peut faire la recherche et l'audit de fournisseurs spécialisés pour répondre à un besoin spécifique du client.",
   },
 ]
 
@@ -328,17 +316,20 @@ export default function Home() {
             </div>
             <div className="space-y-5 text-[16px] leading-[1.8] text-white/62">
               <p>
-                Forte de plusieurs années d'expérience dans le domaine de la conception mécanique, notre entreprise
-                s'est forgée une réputation d'excellence dans les secteurs de la transformation du métal à froid et de
-                la manutention industrielle.
+                EMB Conception est née en 2019. Après 45 ans de carrière et de formation dans le domaine de la
+                conception mécanique, je poursuis en mettant mon savoir, mes connaissances et mon expérience au
+                service de ma clientèle.
               </p>
               <p>
-                Nos débuts modestes nous ont appris l'importance de la précision, de l'innovation et du service client
-                exceptionnel. Aujourd'hui, nous mettons cette expertise au service de vos projets les plus ambitieux.
+                Sur le terrain, j'aide les entreprises à trouver des solutions simples, efficaces et adaptées à leur
+                réalité. Ma spécialité comprend : la transformation du métal à froid, incluant le matriçage, le roll
+                forming, le cartonnage et la manutention de matériaux.
               </p>
               <p>
-                Spécialisés dans les solutions sur mesure, nous accompagnons nos clients de la conception initiale
-                jusqu'à la réalisation finale, en passant par la recherche de fournisseurs et le suivi de projet.
+                Mon approche est directe. Elle consiste à comprendre votre besoin, à concevoir une solution qui
+                fonctionne vraiment et à optimiser ce qui peut l'être pour gagner en efficacité et durabilité.
+                Besoin d'aller plus loin? Je peux aussi m'appuyer sur un réseau fiable d'ateliers pour livrer des
+                projets complets, innovateurs de la conception jusqu'à la fabrication et la mise en route.
               </p>
             </div>
           </div>
@@ -356,7 +347,7 @@ export default function Home() {
               </h2>
             </div>
             <p className="text-white/50 text-[15px] leading-[1.7] max-w-[36ch] lg:text-right">
-              Du concept à la livraison — une gamme complète pour vos projets les plus exigeants.
+              Du concept à la livraison: une gamme complète pour vos projets les plus exigeants.
             </p>
           </div>
 
@@ -524,7 +515,7 @@ export default function Home() {
               <div className="space-y-5">
                 {[
                   { Icon: IconPhone, label: "Téléphone", value: "(581) 724-0163", href: "tel:+15817240163" },
-                  { Icon: IconMail, label: "Courriel", value: "info@embconception.ca", href: "mailto:info@embconception.ca" },
+                  { Icon: IconMail, label: "Courriel", value: "martblai@gmail.com", href: "mailto:martblai@gmail.com" },
                   { Icon: IconMapPin, label: "Localisation", value: "Thetford Mines, QC", href: null },
                 ].map(({ Icon, label, value, href }) => (
                   <div key={label} className="flex items-start gap-4">
@@ -559,61 +550,8 @@ export default function Home() {
               </div>
             </div>
 
-            {/* Right: form card */}
-            <div className="bg-[#111113] rounded-2xl p-8 lg:p-10 border border-white/[0.06]">
-              <h3 className="text-[1.35rem] font-medium mb-7 tracking-[-0.02em] text-white/88">
-                Demande de soumission
-              </h3>
-              <form className="space-y-4">
-                {[
-                  { label: "Nom complet", type: "text", placeholder: "Jean Dupont" },
-                  { label: "Courriel", type: "email", placeholder: "jean@exemple.com" },
-                  { label: "Téléphone", type: "tel", placeholder: "(555) 123-4567" },
-                ].map(({ label, type, placeholder }) => (
-                  <div key={label}>
-                    <label className="block text-[11px] uppercase tracking-[0.1em] text-white/38 font-medium mb-1.5">
-                      {label}
-                    </label>
-                    <input
-                      type={type}
-                      placeholder={placeholder}
-                      className="w-full px-4 py-2.5 bg-white/[0.04] border border-white/[0.08] rounded-lg text-[15px] text-white/80 placeholder-white/22 focus:outline-none focus:border-primary/50 transition-colors font-sans"
-                    />
-                  </div>
-                ))}
-
-                <div>
-                  <label className="block text-[11px] uppercase tracking-[0.1em] text-white/38 font-medium mb-1.5">
-                    Type de projet
-                  </label>
-                  <select className="w-full px-4 py-2.5 bg-white/[0.04] border border-white/[0.08] rounded-lg text-[15px] text-white/65 focus:outline-none focus:border-primary/50 transition-colors font-sans appearance-none">
-                    <option className="bg-[#111113]">Transformation du métal</option>
-                    <option className="bg-[#111113]">Manutention</option>
-                    <option className="bg-[#111113]">Conception 3D</option>
-                    <option className="bg-[#111113]">Autre</option>
-                  </select>
-                </div>
-
-                <div>
-                  <label className="block text-[11px] uppercase tracking-[0.1em] text-white/38 font-medium mb-1.5">
-                    Message
-                  </label>
-                  <textarea
-                    rows={4}
-                    placeholder="Décrivez votre projet..."
-                    className="w-full px-4 py-2.5 bg-white/[0.04] border border-white/[0.08] rounded-lg text-[15px] text-white/80 placeholder-white/22 focus:outline-none focus:border-primary/50 transition-colors resize-none font-sans"
-                  />
-                </div>
-
-                <button
-                  type="submit"
-                  className="flex items-center justify-center gap-2 w-full h-12 bg-primary text-white font-semibold rounded-lg text-[15px] hover:bg-[#c8001f] transition-colors mt-2"
-                >
-                  Envoyer la demande
-                  <IconArrowRight size={16} stroke={2} />
-                </button>
-              </form>
-            </div>
+            {/* Right: form card — temporarily hidden */}
+            {/* TODO: restore form once pro email is set up */}
 
           </div>
           </div>{/* end black rounded card */}
