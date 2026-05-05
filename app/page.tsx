@@ -242,8 +242,8 @@ export default function Home() {
                 <span className="text-gradient-red">précision</span>
               </h1>
               <p className="max-w-[28ch] text-[16px] leading-[1.7] text-white/62 lg:max-w-lg lg:text-[17px]">
-                Expert en transformation du métal à froid et systèmes de manutention. Solutions sur mesure pour vos
-                projets industriels les plus exigeants.
+                Basée à Thetford Mines, QC, EMB Conception accompagne les entreprises en transformation du métal à
+                froid, matriçage, roll forming et manutention industrielle avec des solutions sur mesure.
               </p>
               <a href="#realisations" className="btn-ghost inline-flex items-center gap-2 relative z-10">
                 Voir nos réalisations
@@ -318,7 +318,7 @@ export default function Home() {
               <p>
                 EMB Conception est née en 2019. Après 45 ans de carrière et de formation dans le domaine de la
                 conception mécanique, je poursuis en mettant mon savoir, mes connaissances et mon expérience au
-                service de ma clientèle.
+                service de ma clientèle à Thetford Mines et partout au Québec.
               </p>
               <p>
                 Sur le terrain, j'aide les entreprises à trouver des solutions simples, efficaces et adaptées à leur
@@ -507,16 +507,16 @@ export default function Home() {
                   Contactez-nous
                 </h2>
                 <p className="text-white/62 text-[16px] leading-[1.7] max-w-[34ch]">
-                  Notre équipe est là pour vous accompagner dans toutes les étapes de votre conception mécanique.
-                  Réponse en moins de 24h.
+                  Notre équipe vous accompagne en conception mécanique, transformation du métal à froid et manutention
+                  industrielle à partir de Thetford Mines, QC. Réponse en moins de 24h.
                 </p>
               </div>
 
               <div className="space-y-5">
                 {[
                   { Icon: IconPhone, label: "Téléphone", value: "(581) 724-0163", href: "tel:+15817240163" },
-                  { Icon: IconMail, label: "Courriel", value: "martblai@gmail.com", href: "mailto:martblai@gmail.com" },
-                  { Icon: IconMapPin, label: "Localisation", value: "Thetford Mines, QC", href: null },
+                  { Icon: IconMail, label: "Courriel", value: "info@embconception.ca", href: "mailto:info@embconception.ca" },
+                  { Icon: IconMapPin, label: "Adresse", value: "658 Des Rosiers, Thetford Mines, QC, G6G 5Y1", href: null },
                 ].map(({ Icon, label, value, href }) => (
                   <div key={label} className="flex items-start gap-4">
                     <div className="h-10 w-10 rounded-lg bg-[#111113] flex items-center justify-center flex-shrink-0 mt-0.5">
@@ -527,7 +527,7 @@ export default function Home() {
                       {href ? (
                         <a href={href} className="text-white/75 text-[15px] hover:text-white transition-colors">{value}</a>
                       ) : (
-                        <p className="text-white/75 text-[15px]">{value}</p>
+                        <address className="not-italic text-white/75 text-[15px]">{value}</address>
                       )}
                     </div>
                   </div>
